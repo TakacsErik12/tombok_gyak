@@ -33,12 +33,28 @@ namespace tombok_gyak
             Console.WriteLine(tomb[szam2]);
         }
 
-
+        static Random r = new Random();
+        static void F13()
+        {
+            int[] tomb = new int[20];
+            for (int i = 0; i < tomb.Length; i++)
+            {
+                tomb[i] = r.Next(-100, 100);
+            }
+            foreach (int item in tomb)
+            {
+                Console.Write(item + ", ");
+            }
+            for (int i = 0; i < tomb.Length; i++)
+            {
+                Console.WriteLine($"{i+1,3} {tomb[i],5} {(tomb[i] < 0 ? "-" : "+"),5}");
+            }
+        }
 
         static void Main(string[] args)
         {
-            F05();
-
+            //F05();
+            F13();
         }
     }
 }
