@@ -49,6 +49,10 @@ namespace tombok_gyak
             {
                 Console.WriteLine($"{i+1,3} {tomb[i],5} {(tomb[i] < 0 ? "-" : "+"),5}");
             }
+            for (int i = 0; i < tomb.Length; i += 2)
+            {
+                Console.WriteLine(tomb[i] + 1);
+            }
         }
 
         static void Main(string[] args)
