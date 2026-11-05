@@ -68,10 +68,46 @@ namespace tombok_gyak
             }
         }
 
+        static void Karneval()
+        {
+            int[] tombolak = new int[100];
+            for (int i = 0; i < tombolak.Length; i++)
+            {
+                tombolak[i] = i + 1;
+            }
+            string[] nyeremenyek = {
+            "Élményhajózás a helyi tavon",
+            "Vacsora egy exkluzív étteremben",
+            "Fülhallgató + hangszóró",
+            "Elektromos grill",
+            "10 000 Ft decathlon utalvány",
+            "Wellness hétvége",
+            };
+            int[] nyertesek = new int[6];
+            for (int i = 0; i < nyertesek.Length; i++)
+            {
+                nyertesek[i] = r.Next(1, 101);
+
+                for (int nyertes = 0; nyertes < i; nyertes++)
+                {
+                    if (nyertesek[i] == nyertesek[nyertes])
+                    {
+                        i--;
+                    }
+                }
+            }
+            Console.WriteLine("A tombola nyertesei:");
+            for (int i = 0; i < nyeremenyek.Length; i++)
+            {
+                Console.WriteLine(nyertesek[i] + ". sorsjegy! Nyereménye: " + nyeremenyek[i]);
+            }
+        }
         static void Main(string[] args)
         {
+            //F01();
             //F05();
-            F13();
+            //F13();
+            Karneval();
         }
     }
 }
