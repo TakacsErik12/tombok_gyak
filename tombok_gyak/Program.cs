@@ -4,7 +4,20 @@ namespace tombok_gyak
 {
     internal class Program
     {
-
+        
+        static void F01()
+        {
+            Random rnd = new Random();
+            int[] tomb = new int[10];
+            for (int i = 0; i < tomb.Length; i++)
+            {
+                tomb[i] = rnd.Next(5, 11);
+            }
+            for (int i = 0; i < tomb.Length; i++)
+            {
+                Console.WriteLine(tomb[i]);
+            }
+        }
         static void F05()
         { 
             int[] tomb = new int[5];
